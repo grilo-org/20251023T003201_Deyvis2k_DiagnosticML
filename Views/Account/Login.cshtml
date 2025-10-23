@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="text-center mb-4">Login</h3>
+                    <form method="post" action="/Account/Login">
+                        <div class="mb-3">
+                            <label for="InputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Digite seu email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="InputPassword" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="InputPassword" name="InputPassword" placeholder="Digite sua senha">
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Entrar</button>
+                        </div>
+                    </form>
+
+                    <hr class="my-4">
+
+                    <div class="text-center" >
+                        <a class="btn btn-outline-dark w-100" id="LoginButton">
+                            <span class="me-2">Continuar com Google</span>
+                            <img src="/Assets/google-logo.png" width="20" class="me-2">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

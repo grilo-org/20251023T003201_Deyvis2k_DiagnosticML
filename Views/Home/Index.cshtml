@@ -1,0 +1,32 @@
+﻿@using System.Security.Claims
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (User?.Identity?.IsAuthenticated != true){ 
+    Console.WriteLine("User is not authenticated");
+}
+
+@if (User?.Identity?.IsAuthenticated == true){
+    <div class="text-center">
+        <h1 class="display-4">Welcome to MedicalSys</h1>
+    </div>
+    <div class="text-center">
+        <h1 class="display-4">@User.Identity?.Name</h1>
+    </div>
+    var role = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+    @if (@role == null ) {
+        Console.WriteLine("Role is null");
+    }
+    <div class="text-end">
+        <h1 class="display-4">@role</h1>
+    </div>
+}
+else{
+    <div class="text-end">
+        <h1 class="display-4">You are not logged in</h1>
+    </div>
+}
+
+
